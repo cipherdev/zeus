@@ -1,0 +1,54 @@
+                               NanoProject
+             		 Software Release Notes
+                            (anhhuy@live.com)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+                                 CONTENTS
+Topic                            --------                       Section
+-----                                                           -------
+
+ o SUMMARY OF CHANGES ............................................ 1.0
+ o COPYRIGHT ..................................................... 2.0
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+1.0 SUMMARY OF CHANGES
+
+    Version 1.01.01 ()
+
+    Compiler
+     - Toolchain ARM-4.9.3
+
+    Resolved Issues:
+
+-------------------------------------------------------------------------------
+
+    Version 1.00.03-preAlpha ()
+
+    U-Boot Features:
+
+    Linux Features:
+
+    Compiler
+
+    Boards
+     - Zeus
+
+    Resolved Errata
+     - None
+
+    Resolved Issues
+     - None
+
+    Known Issues
+     - None
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+2.0 COPYRIGHT
+
+    Copyright (c) 2016 NanoProject Team.
+    All Rights Reserved.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
