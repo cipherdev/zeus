@@ -93,9 +93,9 @@ linux_savedefconfig:
 linux_modules:
 	@echo
 	@echo "############################# Build linux modules ###############################"
-	cd linux; make ARCH=arm CROSS_COMPILE=${CROSS_COMPILE} INSTALL_MOD_PATH=../${BUILDBIN}/${CPUNAME}/modules modules modules_install ; cd -
-	rm -f ${BUILDBIN}/${CPUNAME}/modules/lib/modules/*/build
-	rm -f ${BUILDBIN}/${CPUNAME}/modules/lib/modules/*/source
+	cd linux; make ARCH=arm CROSS_COMPILE=${CROSS_COMPILE} modules; cd -
+	#rm -f ${BUILDBIN}/${CPUNAME}/modules/lib/modules/*/build
+	#rm -f ${BUILDBIN}/${CPUNAME}/modules/lib/modules/*/source
 
 linux:
 	@echo
@@ -122,5 +122,6 @@ ramdisks:
 uboot_all: media_uboot
 
 linux_all: linux_config linux linux_modules
+#linux_all: linux_config linux
 
 media_uboot: uboot_config uboot_media
