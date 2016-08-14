@@ -833,48 +833,60 @@ void nxp_clk_print(void)
 	int pll, cpu;
 
 	core_rate_init();
-
+#ifdef _huyle_debug_
 	printk("PLL : [0] = %10lu, [1] = %10lu, [2] = %10lu, [3] = %10lu\n",
-		core_hz.pll[0], core_hz.pll[1], core_hz.pll[2], core_hz.pll[3]);
-
+		core_hz.pll[0], core_hz.pll[1], core_hz.pll[2], core_hz.pll[3]);*/
+#endif
 	/* CPU0, 1  : DIV 0, 7 */
 	pll = pll_dvo(DIV_CPUG0), cpu = pll, support_dvfs = 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: CPU  FCLK = %10lu, HCLK = %9lu (G0)\n", DIV_CPUG0,
 		pll, core_hz.cpu_fclk, core_hz.cpu_bclk);
+#endif
 	pll = pll_dvo(DIV_CPUG1), cpu = pll, support_dvfs = 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: CPU  FCLK = %10lu, HCLK = %9lu (G1)\n", DIV_CPUG1,
 		pll, (ulong)CPU_FCLK_RATE(DIV_CPUG1), (ulong)CPU_BCLK_RATE(DIV_CPUG1));
+#endif
 
 	/* MEM */
 	pll = pll_dvo(DIV_MEM), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: MEM  FCLK = %10lu, DCLK = %9lu, BCLK = %9lu, PCLK = %9lu\n", DIV_MEM,
 		pll, core_hz.mem_fclk, core_hz.mem_dclk, core_hz.mem_bclk, core_hz.mem_pclk);
-
+#endif
 	/* BUS */
 	pll = pll_dvo(DIV_BUS), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: BUS  BCLK = %10lu, PCLK = %9lu\n", DIV_BUS,
 		pll, core_hz.bus_bclk, core_hz.bus_pclk);
-
+#endif
 	/* CCI */
 	pll = pll_dvo(DIV_CCI4), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: CCI4 BCLK = %10lu, PCLK = %9lu\n", DIV_CCI4, pll, core_hz.cci4_bclk, core_hz.cci4_pclk);
-
+#endif
 	/* G3D */
 	if (pll == cpu) support_dvfs = 0;
 	pll = pll_dvo(DIV_G3D), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: G3D  BCLK = %10lu\n", DIV_G3D, pll, core_hz.g3d_bclk);
-
+#endif
 	/* MPEG */
 	pll = pll_dvo(DIV_CODA), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug
 	printk("(%d) PLL%d: CODA BCLK = %10lu, PCLK = %9lu\n", DIV_CODA,
 		pll, core_hz.coda_bclk, core_hz.coda_pclk);
-
+#endif
 	/* DISPLAY */
 	pll = pll_dvo(DIV_DISP), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: DISP BCLK = %10lu, PCLK = %9lu\n", DIV_DISP,
 		pll, core_hz.disp_bclk, core_hz.disp_pclk);
-
+#endif
 	/* HDMI */
 	pll = pll_dvo(DIV_HDMI), support_dvfs = pll == cpu ? 0 : 1;
+#ifdef _huyle_debug_
 	printk("(%d) PLL%d: HDMI PCLK = %10lu\n", DIV_HDMI, pll, core_hz.hdmi_pclk);
+#endif
 }

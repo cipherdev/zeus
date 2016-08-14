@@ -220,7 +220,7 @@ void gdt_reset(gd_t *gd, ulong text, ulong sp)
 #if defined(CONFIG_DISPLAY_CPUINFO)
 	asm("mov %0, pc":"=r" (pc));
 	asm("mov %0, sp":"=r" (sp));
-
+#ifdef _huyle_debug_
 	printf("Heap = 0x%08lx~0x%08lx\n", heap_end-TOTAL_MALLOC_LEN, heap_end);
 	printf("Code = 0x%08lx~0x%08lx\n", text_start, text_end);
 	printf("GLD  = 0x%08lx\n", (ulong)gd);
@@ -239,6 +239,7 @@ void gdt_reset(gd_t *gd, ulong text, ulong sp)
 	#endif
 	printf("MACH = [%ld]   \n", gd->bd->bi_arch_number);
 	printf("VER  = %u      \n", nxp_cpu_version());
+#endif
 	printf("BOARD= [%s]    \n", CONFIG_SYS_BOARD);
 #endif
 }

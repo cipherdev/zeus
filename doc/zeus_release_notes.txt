@@ -15,34 +15,21 @@ Topic                            --------                       Section
 
 1.0 SUMMARY OF CHANGES
 
-    Version 1.01.01 ()
-
-    Compiler
-     - Toolchain ARM-4.9.3
-
-    Resolved Issues:
-
 -------------------------------------------------------------------------------
 
-    Version 1.00.03-preAlpha ()
+    Version 1.00.00-preAlpha (08/14/2016)
 
-    U-Boot Features:
+	Compiler
+    	 - Toolchain ARM-4.9.3
 
-    Linux Features:
+	Boards
+	- Nano PC-T3
 
-    Compiler
+	Resolved Issues
+	- Ethernet work on Uboot with the speed 10/100/1000Mb
 
-    Boards
-     - Zeus
-
-    Resolved Errata
-     - None
-
-    Resolved Issues
-     - None
-
-    Known Issues
-     - None
+	Known Issues
+	- USB doesn't work on the Uboot.
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
